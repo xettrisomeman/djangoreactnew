@@ -1,22 +1,15 @@
-import React , {useEffect} from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
-import axios from 'axios';
 
 import CustomLayout from './containers/Layout';
+import PostList from './containers/PostList';
 
 
-function App() {
+function App(){
 
-  useEffect(()=>{
-    axios.get('http://localhost:8000/api/')
-    .then((res=>{
-      console.log(res.data)
-    }))
-    .catch(error=>console.log(error));
-  },[])
   return (
      <CustomLayout>
-
+       <PostList/>
      </CustomLayout>
   );
 }

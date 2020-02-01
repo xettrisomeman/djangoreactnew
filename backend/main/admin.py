@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import CustomUser
+from .models import CustomUser , Posts
 from .forms import CustomUserAddForm ,CustomUserChangeForm
 
 @admin.register(CustomUser)
@@ -33,3 +33,12 @@ class CustomUserAdmin(UserAdmin):
             )
         }),
     )
+
+
+@admin.register(Posts)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title' , 'created_at')
+    list_filter = ('title',)
+    search_fields = ('title',)
+    ordering = ('title',)
+

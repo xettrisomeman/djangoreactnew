@@ -1,6 +1,5 @@
 from django.db import models
-
-# Create your models here.
+from django.utils.timezone import now
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 
@@ -24,3 +23,19 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.email
     
+
+class Posts(models.Model):
+    title = models.CharField(_("Title"), max_length=150)
+    content = models.TextField(_("Add Your Content"))
+    created_at = models.DateTimeField(_("Created Time") , editable=False)
+    modified_at = models.DateTimeField(_('Modified Time') ,auto_now=True)
+
+    class Meta:
+        db_table = 'Posts'
+        verbose_name_plural = "Posts"
+
+    def save(self):
+        if not self.id:
+            self.created_at =now()
+        return super().save()
+

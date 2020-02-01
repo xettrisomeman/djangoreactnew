@@ -12,7 +12,7 @@ return(
        <List.Item>
         <List.Item.Meta
            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-          title={<a href="http://localhost:3000">{item.title}</a>}
+          title={<a href={`/${item.id}/`}>{item.title}</a>}
            description={item.content}
        />
       </List.Item>

@@ -1,16 +1,19 @@
 import React from 'react';
 import 'antd/dist/antd.css';
+import {BrowserRouter} from 'react-router-dom';
+
 
 import CustomLayout from './containers/Layout';
-import PostList from './containers/PostList';
-
+import CustomRoute from './router';
 
 function App(){
 
   return (
+    <BrowserRouter>
      <CustomLayout>
-       <PostList/>
+       <CustomRoute/>
      </CustomLayout>
+     </BrowserRouter>
   );
 }
 

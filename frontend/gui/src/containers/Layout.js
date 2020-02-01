@@ -3,7 +3,7 @@ import { Layout, Menu, Icon } from 'antd';
 
 const { Header, Sider, Content } = Layout;
 
-const CustomLayout = () =>{
+const CustomLayout = props =>{
 
     const [collapse , setCollapse] = useState(false);
 

@@ -1,0 +1,5 @@
+#django
+__pycache__/
+/migrations
+
+
